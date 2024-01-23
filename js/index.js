@@ -16,6 +16,14 @@ function reset (event, size = 16) {
     if (size === 16) {
         inputSize.value = 16;
     }
+    const sizeToBeDisplayed = document.createElement('h3');
+    sizeToBeDisplayed.textContent = size + " x " + size;
+    let elements = inputSize.parentElement.childElementCount;
+    for (let i = 0; i < elements-1; i++) {
+        const parent = inputSize.parentElement;
+        parent.removeChild(parent.firstChild);
+    }
+    inputSize.parentNode.insertBefore(sizeToBeDisplayed, inputSize);
     brightness = 1;
     while (sketchBoard.firstChild) {
         sketchBoard.removeChild(sketchBoard.lastChild);
@@ -29,8 +37,8 @@ function reset (event, size = 16) {
 
 function addPixel(size) {
     const newPixel = document.createElement('div');
-    newPixel.style.width = (24)/(size) + "rem";
-    newPixel.style.height = (24)/(size) + "rem";
+    newPixel.style.width = (24)/(size) - 0.001 + "rem";
+    newPixel.style.height = (24)/(size) - 0.001 + "rem";
     newPixel.style.backgroundColor = "white";
     newPixel.style.border = "none";
     newPixel.addEventListener("mouseover", changeColor);
