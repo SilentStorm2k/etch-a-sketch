@@ -1,4 +1,54 @@
 html,
 body {
     height: 100%;
+    margin: 0;
+}
+
+* {
+    border: 1px solid red;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header,
+.content,
+.footer {
+    display: flex;
+}
+
+.header {
+    justify-content: space-between;
+}   
+
+.header,
+.footer {
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo,
+.git {
+    background-size: cover;
+}
+
+.logo {
+    height: 4rem;
+    width: 4rem;
+}
+
+.content {
+    flex:1;
+}
+
+.footer {
+    justify-content: center;
+}
+
+.git {
+    height: 2rem;
+    width: 2rem;
 }
