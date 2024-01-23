@@ -33,11 +33,11 @@ body {
 .logo,
 .git {
     background-size: cover;
+    height: auto;
 }
 
 .logo {
-    height: 4rem;
-    width: 4rem;
+    width: 6rem;
 }
 
 .content {
@@ -49,6 +49,5 @@ body {
 }
 
 .git {
-    height: 2rem;
     width: 2rem;
 }
