@@ -5,7 +5,7 @@ body {
 }
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 body {
@@ -46,9 +46,27 @@ body {
     flex-direction: column;
 }
 
-.sketch-container {
+.sketch-board {
     flex: 4;
     background-color: #F3B95F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.sketch-container {
+    margin: 2rem;
+    display: flex;
+    height: 24rem;
+    width: 24rem;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.sketch-container > * {
+    flex-shrink: 0;
+    margin: 0;
 }
 
 .button-container {
