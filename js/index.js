@@ -57,16 +57,3 @@ function changeColor(event) {
 function getRandom (max) {
     return Math.round(Math.random()*max);
 }
-
-// downloadButton.addEventListener('click', downloadSketch);
-
-// function downloadURI (uri, name) {
-//     const link = document.createElement('a');
-//     link.download = name;
-//     link.href = uri;
-//     link.click()
-// }
-
-// function downloadSketch (event) {
-//     const sketch = sketchBoard.toDataURL("images/temp.png");
-// }
