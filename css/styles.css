@@ -2,11 +2,12 @@ html,
 body {
     height: 100%;
     margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif, 'Arial Narrow Bold', sans-serif;
 }
 
-* {
+/* * {
     border: 1px solid red;
-}
+} */
 
 body {
     display: flex;
@@ -62,6 +63,7 @@ body {
     width: 24rem;
     flex-wrap: wrap;
     align-content: center;
+    border: 1rem solid #6895D2;
 }
 
 .sketch-container > * {
@@ -79,6 +81,21 @@ body {
     gap: 2rem;
 }
 
+.size-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#size {
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin-bottom: 0;
+}
+
 .footer {
     justify-content: center;
     padding: 0.2rem;
@@ -87,4 +104,16 @@ body {
 
 .git {
     width: 2rem;
+}
+
+.git:hover {
+    content: url("../images/github-logo-dark.png");
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F3B95F;
 }
