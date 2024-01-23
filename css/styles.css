@@ -5,7 +5,7 @@ body {
 }
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -21,11 +21,12 @@ body {
 
 .header {
     justify-content: space-between;
+    padding: 1rem;
+    background-color: #D04848;
 }   
 
 .header,
 .footer {
-    padding: 1rem;
     align-items: center;
     gap: 1rem;
 }
@@ -42,10 +43,28 @@ body {
 
 .content {
     flex:1;
+    flex-direction: column;
+}
+
+.sketch-container {
+    flex: 4;
+    background-color: #F3B95F;
+}
+
+.button-container {
+    background-color: #FDE767;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .footer {
     justify-content: center;
+    padding: 0.2rem;
+    background-color: #6895D2;
 }
 
 .git {
