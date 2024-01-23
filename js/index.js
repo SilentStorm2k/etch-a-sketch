@@ -3,9 +3,12 @@ const inputSize = document.querySelector("#size");
 const resetButton = document.querySelector("#reset");
 const download = document.querySelector("#download");
 const sketchBoard = document.querySelector(".sketch-container");
-const colors = ['#ff0000', '#00ff00', '#0000ff', '#ff3333', '#ffff00', '#ff6600'];
+let brightness = 1, dimFactor = 0.1;
 
-resetButton.addEventListener("click", reset)
+resetButton.addEventListener("mouseover", reset);
+
+// calling reset to initialize an empty sketch board
+reset();
 
 function reset (event) {
     while (sketchBoard.firstChild) {
@@ -16,7 +19,6 @@ function reset (event) {
             addPixel();
         }
     }
-    return
 }
 
 function addPixel() {
@@ -25,13 +27,20 @@ function addPixel() {
     newPixel.style.height = (24)/(size) + "rem";
     newPixel.style.backgroundColor = "white";
     newPixel.style.border = "none";
-    // newPixel.
-    newPixel.addEventListener("hover", changeColor);
+    newPixel.addEventListener("mouseover", changeColor);
     sketchBoard.appendChild(newPixel);
-    return
 }
 
 function changeColor(event) {
-    const randColor = Math.floor(Math.random()*colors.length);
-    // pixel.style.backgroundColor = colors[randColor];
+    brightness -= dimFactor;
+    const currentPixel = event.target;
+    const randomColor = "rgba(" + brightness*getRandom(256) + "," + brightness*getRandom(256) + "," + brightness*getRandom(256) + ")";
+    currentPixel.style.backgroundColor = randomColor;
+    currentPixel.style.brightness = brightness;
+    event.stopPropagation();
+    currentPixel.removeEventListener("mouseover", changeColor);
+}
+
+function getRandom (max) {
+    return Math.round(Math.random()*max);
 }
